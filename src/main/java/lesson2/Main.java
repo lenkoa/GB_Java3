@@ -94,7 +94,7 @@ public class Main {
             }
 
             if (nullResult)
-                System.out.println("Goods with price " + minPrice + " and " + maxPrice + " between are not found");
+                System.out.println("Goods with price between " + minPrice + " and " + maxPrice + " are not found");
         }
     }
 }
