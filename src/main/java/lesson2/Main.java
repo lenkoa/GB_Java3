@@ -18,8 +18,8 @@ public class Main {
                 createTable(conn);
                 fillTableByRandomGoods(conn);
                 checkGood(conn, TEST_GOOD_NAME);
-                changePrice(conn, TEST_GOOD_NAME, 10);
-                printGoods(conn, 0, 100000);
+                changePrice(conn, TEST_GOOD_NAME + " " + 3, 10);
+                printGoods(conn, 0, 100);
             }
         } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
@@ -46,7 +46,7 @@ public class Main {
         for (int i = 1; i <= 10000; i++) {
             ps.setInt(1, i);
             ps.setString(2, TEST_GOOD_NAME + " " + i);
-            ps.setInt(3, (int) (Math.random() * 1000000));
+            ps.setInt(3, (int) (Math.random() * 1000));
             ps.addBatch();
         }
         int[] result = ps.executeBatch();
