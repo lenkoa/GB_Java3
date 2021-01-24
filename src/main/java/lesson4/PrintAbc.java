@@ -7,15 +7,9 @@ public class PrintAbc {
 
     public static void main(String[] args) {
         PrintAbc abc = new PrintAbc();
-        Thread t1 = new Thread(()-> {
-            abc.printA();
-        });
-        Thread t2 = new Thread(()-> {
-            abc.printB();
-        });
-        Thread t3 = new Thread(()-> {
-            abc.printC();
-        });
+        Thread t1 = new Thread(abc::printA);
+        Thread t2 = new Thread(abc::printB);
+        Thread t3 = new Thread(abc::printC);
         t1.start();
         t2.start();
         t3.start();
@@ -74,6 +68,4 @@ public class PrintAbc {
             }
         }
     }
-
-
 }
